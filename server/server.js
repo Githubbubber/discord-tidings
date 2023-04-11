@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const userRouter = require('./routes/api/userRouter');
 
+require('dotenv').config();
+
 const app = express();
 const port = 3001;
 
