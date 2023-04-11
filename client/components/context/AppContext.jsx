@@ -4,7 +4,9 @@ import axios from 'axios';
 const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-   const [app, setApp] = useState({ user: 'Guest' });
+   const [app, setApp] = useState({ 
+      discord: 'n/a' 
+   });
    
    useEffect(() => {
       axios({
@@ -12,6 +14,7 @@ const AppContextProvider = ({ children }) => {
          url: '/api'
       }).then(({ data }) => {
          console.log(data);
+         
          setApp(data);
       }).catch(err => {
          console.error(err);

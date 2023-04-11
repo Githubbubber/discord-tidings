@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const userRouter = require('./routes/api/userRouter');
+const discordRouter = require('./routes/api/discordRouter');
 
 require('dotenv').config();
 
@@ -12,6 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/api', userRouter);
+app.use('/api', discordRouter);
 
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
