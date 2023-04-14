@@ -6,7 +6,7 @@ const discordRouter = require('./routes/api/discordRouter');
 require('dotenv').config();
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
