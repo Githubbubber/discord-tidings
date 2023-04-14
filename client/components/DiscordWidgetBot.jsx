@@ -3,7 +3,7 @@ import WidgetBot from '@widgetbot/react-embed';
 
 import AppContext from './context/AppContext.jsx';
 
-const DiscordChatView = ({
+const DiscordWidgetBot = ({
     height = "600px", 
     width = "500px"
 }) => {
@@ -23,4 +23,4 @@ const DiscordChatView = ({
   />;
 }
 
-export default DiscordChatView;
+export default DiscordWidgetBot;
