@@ -5,8 +5,7 @@ import AppContext from './context/AppContext.jsx';
 
 const DiscordAccount = ({ loginInfo }) => {
     const { app } = useContext(AppContext);
-    const { discord_get } = app;
-    const { server, channelId } = discord_get;
+    const { server, channelId } = app;
 
     const avatarSrc = `https://cdn.discordapp.com/avatars/` + 
     `${loginInfo.id}` +
