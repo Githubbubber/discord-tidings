@@ -5,7 +5,8 @@ const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
    const [app, setApp] = useState({ 
-      discord: 'n/a' 
+      server: null,
+      channelId: null, 
    });
    
    useEffect(() => {
