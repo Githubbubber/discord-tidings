@@ -21,18 +21,17 @@ const DiscordAccount = ({ loginInfo }) => {
 
     return <div>
         <div>Welcome to the dashboard</div>
-
-        <div>
-            <img src={avatarSrc} id="avatar" alt={altForAvatar} />
+            <img src={avatarSrc} id="avatar" alt="Discord avatar" />
+            
+            <br />
 
             <div id="name">
-                {loginInfo.username}#{loginInfo.discriminator}
+                {loginInfo.username ? loginInfo.username : "Username"}#{loginInfo.discriminator ? loginInfo.discriminator : "0000"}
             </div>
-        </div> 
 
-        <DiscordWidgetBot server={discord_get.server} channelId={discord_get.channelId} />
+            <a href="/">Log Out</a>
 
-        <a href="/">Log Out</a>
+        <DiscordWidgetBot server={server} channelId={channelId} />
     </div>;
 };
 
