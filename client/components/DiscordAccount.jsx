@@ -13,11 +13,6 @@ const DiscordAccount = ({ loginInfo }) => {
     `${loginInfo.avatar}` + 
     `.png`;
 
-    const altForAvatar = `Discord avatar for ` + 
-    `${loginInfo.username}` + 
-    `#` + 
-    `${loginInfo.discriminator}`;
-
     return <div>
         <div>Welcome to the dashboard</div>
             <img src={avatarSrc} id="avatar" alt="Discord avatar" />
