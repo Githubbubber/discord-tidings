@@ -32,15 +32,15 @@ discordRouter.get('/discord/login', (req, res, next) => {
     const redirect_uri = process.env.DISCORD_REDIRECT_URI;
     const response_type = 'token';
     const scope = 'identify';
-    const url = process.env.DISCORD_OAUTH_AUTHORIZE_URL;
+    const url = process.env.DISCORD_LOGIN_URL;
     const get_url = `${url}` +
-        `?client_id=` +
+        `redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D` +
         `${client_id}` +
-        `&redirect_uri=` +
+        `%26redirect_uri%3D` +
         `${redirect_uri}` +
-        `&response_type=` +
+        `%26response_type%3D` +
         `${response_type}` +
-        `&scope=` +
+        `%26scope%3D` +
         `${scope}`;
 
     const rate_limit_remaining = req.headers['X-RateLimit-Remaining'];
