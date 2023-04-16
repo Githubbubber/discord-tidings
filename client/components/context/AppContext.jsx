@@ -30,7 +30,7 @@ const AppContextProvider = ({ children }) => {
    }, []);
 
    return (
-      <AppContext.Provider value={{ app, setApp }}>
+      <AppContext.Provider value={{ app }}>
          {children}
       </AppContext.Provider>
    );
