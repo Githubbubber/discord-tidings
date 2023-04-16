@@ -13,7 +13,16 @@ const AppContextProvider = ({ children }) => {
          method: 'get',
          url: '/api'
       }).then(({ data }) => {
-         setApp(data);
+         const { discord } = data;
+         const { server, channelId } = discord;
+
+         setApp(prev => {
+            return {
+               ...prev,
+               server,
+               channelId,
+            };
+         });
       }).catch(err => {
          console.error(err);
       })
