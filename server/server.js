@@ -14,4 +14,13 @@ app.use(cors());
 
 app.use('/api', discordRouter);
 
+app.get('/auth/discord', (req, res) => {
+    const path_params = req.originalUrl.indexOf("#") !== -1 ? req.originalUrl.split("#")[1] : 
+                        req.originalUrl.indexOf("?") !== -1 ? req.originalUrl.split("?")[1] :
+                        "";
+    const redirect_url = process.env.APP_REDIRECT_URL;
+
+    res.redirect(redirect_url + path_params);
+});
+
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
