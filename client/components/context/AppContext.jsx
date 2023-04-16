@@ -35,6 +35,4 @@ const AppContextProvider = ({ children }) => {
    );
 };
 
-const AppContextConsumer = AppContext.Consumer;
-
-export { AppContextProvider, AppContextConsumer, AppContext as default };
+export { AppContextProvider, AppContext as default };
