@@ -10,11 +10,9 @@ const AppContextProvider = ({ children }) => {
    
    useEffect(() => {
       axios({
-         method: 'post',
+         method: 'get',
          url: '/api'
       }).then(({ data }) => {
-         console.log(data);
-         
          setApp(data);
       }).catch(err => {
          console.error(err);
