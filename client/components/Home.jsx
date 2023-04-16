@@ -21,8 +21,7 @@ const Home = () => {
                 authorization: `Bearer ${accessToken}`,
             }
         })
-            .then(res => res.json())
-            .then(data => {
+            .then(({ data }) => {
                 const { 
                     username, discriminator, 
                     avatar, 
@@ -39,16 +38,13 @@ const Home = () => {
                         accessToken: accessToken,
                     }
                 });
-
+            })
+            .then(() => {
                 axios({
                     url: "/api/discord/login",
                     method: "POST",
                     data: loginInfo,
                 })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log("handleLogin: ", data);
-                    })
                     .catch(err => {
                         console.error(err);
                     });
